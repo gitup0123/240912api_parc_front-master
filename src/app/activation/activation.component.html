@@ -1,0 +1,41 @@
+<div class="container mt-5" style="background-color: #f5f8fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px;">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center mb-4" style="color: #3498db; font-weight: bold;">Activation du Compte</h2>
+      <p class="text-center" style="font-size: 1.1em; color: #7f8c8d;">
+        Un code d'activation a été envoyé à votre adresse email. Veuillez vérifier votre boîte de réception et, si nécessaire, votre dossier de courriers indésirables.
+      </p>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="activationCode" style="font-weight: bold;">Code d'Activation</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-key"></i>
+              </span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="activationCode"
+              [(ngModel)]="activationCode"
+              name="activationCode"
+              required
+              placeholder="Entrez le code d'activation"
+              style="border-radius: 5px;"
+            />
+          </div>
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+          {{ errorMessage }}
+        </div>
+        <div *ngIf="successMessage" class="alert alert-success mt-3">
+          {{ successMessage }}
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mt-4" style="background-color: #2ecc71; border-color: #27ae60; font-weight: bold; border-radius: 5px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          Activer le Compte
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

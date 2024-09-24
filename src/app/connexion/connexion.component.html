@@ -1,0 +1,65 @@
+<div class="container mt-5" style="background-color: #f5f8fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px;">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <h2 class="text-center mb-4" style="color: #3498db; font-weight: bold;">Connexion</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="email" style="font-weight: bold;">Email</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              [(ngModel)]="email"
+              name="email"
+              required
+              placeholder="Entrez votre email"
+              style="border-radius: 5px;"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password" style="font-weight: bold;">Mot de passe</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-lock"></i>
+              </span>
+            </div>
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              class="form-control"
+              id="password"
+              [(ngModel)]="password"
+              name="password"
+              required
+              placeholder="Entrez votre mot de passe"
+              style="border-radius: 5px;"
+            />
+          </div>
+        </div>
+        <div class="form-group form-check">
+          <input 
+            type="checkbox" 
+            class="form-check-input" 
+            id="showPassword" 
+            [(ngModel)]="showPassword" 
+            [ngModelOptions]="{standalone: true}"
+          />
+          <label class="form-check-label" for="showPassword">Afficher le mot de passe</label>
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+          {{ errorMessage }}
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mt-4" style="background-color: #2ecc71; border-color: #27ae60; font-weight: bold; border-radius: 5px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          Connexion
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

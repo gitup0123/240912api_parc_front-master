@@ -1,0 +1,75 @@
+<div class="container mt-5" style="background-color: #f5f8fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px;">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center mb-4" style="color: #3498db; font-weight: bold;">Inscrivez-vous et rejoignez notre communauté!</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="pseudo" style="font-weight: bold;">Pseudo</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-user"></i>
+              </span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="pseudo"
+              [(ngModel)]="pseudo"
+              name="pseudo"
+              required
+              placeholder="Entrez votre pseudo"
+              style="border-radius: 5px;"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" style="font-weight: bold;">Email</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              [(ngModel)]="email"
+              name="email"
+              required
+              placeholder="Entrez votre email"
+              style="border-radius: 5px;"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="mdp" style="font-weight: bold;">Mot de passe</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-lock"></i>
+              </span>
+            </div>
+            <input
+              type="password"
+              class="form-control"
+              id="mdp"
+              [(ngModel)]="mdp"
+              name="mdp"
+              required
+              placeholder="Entrez votre mot de passe"
+              style="border-radius: 5px;"
+            />
+          </div>
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+          {{ errorMessage }}
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mt-4" style="background-color: #2ecc71; border-color: #27ae60; font-weight: bold; border-radius: 5px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          S'inscrire
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
